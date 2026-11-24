@@ -938,7 +938,7 @@ const discs = gallerySlots.map((production, index) => {
         ` : ""}
       </span>
       <span class="disc__face disc__face--back" aria-hidden="true">
-        <span class="disc__back-copy">${production?.title ?? ""}<small>A24 · TELEVISION</small></span>
+        <span class="disc__back-copy">${production?.title ?? ""}<small>瓷时集 · PORCELAIN MOMENTS</small></span>
       </span>
     </span>
     <span class="disc__hub" aria-hidden="true"></span>
@@ -1225,7 +1225,7 @@ function updateProduction() {
     element.textContent = meta[index]?.value ?? "";
   });
   status.textContent = `${activeIndex + 1} / ${productions.length} · ${production.title}`;
-  document.title = `${production.title} — A24 电视`;
+  document.title = `${production.title} — 瓷时集`;
   reviewPair.replaceChildren(...production.reviews.map(createReview));
   productionCaption.textContent = production.caption ? `“${production.caption}”` : "";
   productionCaption.hidden = !productionCaption.textContent;
