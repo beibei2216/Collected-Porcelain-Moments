@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f2f2">
+    <meta
+      name="description"
+      content="《瓷时集》以陶成梳理陶瓷发展史，以琢土解读《陶冶图卷》十二幅制运场景，并通过观器细读八件代表瓷器的工艺与时代特色。"
+    >
+    <meta name="application-name" content="瓷时集">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="瓷时集 — 陶成 · 琢土 · 观器">
+    <meta
+      property="og:description"
+      content="沿陶瓷发展史观器，循《陶冶图卷》见工序，以三维模型细读八件代表瓷器。"
+    >
+    <title>瓷时集 — 陶成 · 琢土 · 观器</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23111'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='serif' font-size='30' fill='%23f2f2f2'%3E瓷%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+    <link
+      rel="preload"
+      href="./assets/han-jin-original-celadon-zeng-web.glb?v=20261124-2"
+      as="fetch"
+      type="model/gltf-binary"
+      crossorigin="anonymous"
+    >
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three/three.module.js"
+        }
+      }
+    </script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-nav" data-nav>
+      <a class="brand" href="./" aria-label="CSJ 首页">
+        <span class="brand__wordmark" aria-hidden="true">CSJ</span>
+      </a>
+
+      <nav class="nav-links" aria-label="主导航">
+        <button
+          class="nav-link is-current"
+          type="button"
+          data-collection-nav="taocheng"
+          aria-pressed="true"
+          aria-controls="gallery"
+        >
+          陶成
+        </button>
+        <button
+          class="nav-link"
+          type="button"
+          data-collection-nav="zhuotu"
+          aria-pressed="false"
+          aria-controls="gallery"
+        >
+          琢土
+        </button>
+        <button
+          class="nav-link nav-link--button observation-toggle"
+          type="button"
+          data-observation-toggle
+          aria-pressed="false"
+          aria-controls="observation-panel"
+        >
+          <span class="observation-toggle__status" aria-hidden="true"></span>
+          观器
+        </button>
+        <button
+          class="nav-link nav-link--button"
+          type="button"
+          data-index-toggle
+          aria-expanded="false"
+          aria-controls="index-panel"
+        >
+          索引
+          <svg viewBox="0 0 17 10" fill="none" aria-hidden="true">
+            <path
+              d="M1.5 1.5L8.5 8.5L15.5 1.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main id="gallery" class="hero" data-collection="taocheng">
+      <div class="meta-fade" aria-hidden="true"></div>
+
+      <section class="production-meta" aria-labelledby="production-title">
+        <h1 id="production-title" class="production-title" data-title>汉晋·新平治陶 HAN-JIN</h1>
+        <dl class="credits">
+          <div class="credit-row">
+            <dt data-credit-label>时间</dt>
+            <dd data-credit-value>约 25–420 年</dd>
+          </div>
+          <div class="credit-row">
+            <dt data-credit-label>时代侧重</dt>
+            <dd data-credit-value>陶业初创</dd>
+          </div>
+          <div class="credit-row">
+            <dt data-credit-label>代表器物</dt>
+            <dd data-credit-value>原始青瓷
+粗陶</dd>
+          </div>
+          <div class="credit-row">
+            <dt data-credit-label>时代气质</dt>
+            <dd data-credit-value>土火初启，质朴简素</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section
+        class="gallery-stage"
+        data-gallery
+        tabindex="0"
+        role="region"
+        aria-label="作品画廊。使用左右方向键切换作品。"
+      >
+        <div class="disc-track" data-disc-track aria-live="polite"></div>
+        <p class="gallery-status" data-gallery-status>
+          1 / 8 · 汉晋·新平治陶 HAN-JIN
+        </p>
+      </section>
+
+      <section class="review-pair" aria-label="媒体评价" data-reviews></section>
+      <p
+        class="production-caption"
+        data-production-caption
+        aria-label="底部文案"
+        hidden
+      ></p>
+
+      <aside
+        class="zhuotu-caption"
+        data-zhuotu-caption
+        aria-label="版块题记"
+        hidden
+      ></aside>
+
+      <button class="nav-arrow nav-arrow--prev" type="button" data-prev aria-label="上一部作品">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button class="nav-arrow nav-arrow--next" type="button" data-next aria-label="下一部作品">
+        <span aria-hidden="true">→</span>
+      </button>
+    </main>
+
+    <dialog
+      id="observation-panel"
+      class="observation-dialog"
+      data-observation-dialog
+      aria-labelledby="observation-title"
+    >
+      <div class="observation-dialog__shell">
+        <div class="observation-dialog__atmosphere" aria-hidden="true"></div>
+        <header class="observation-dialog__header">
+          <div class="observation-dialog__brand">
+            <span class="observation-dialog__seal" aria-hidden="true">观<br>器</span>
+            <p class="eyebrow">
+              观器
+              <small>OBJECT STUDY</small>
+            </p>
+          </div>
+          <div class="observation-dialog__header-actions">
+            <span data-observation-count aria-live="polite" aria-atomic="true">01 / 08</span>
+            <button type="button" data-observation-close>退出观器</button>
+          </div>
+        </header>
+
+        <div class="observation-dialog__body">
+          <figure class="observation-dialog__media">
+            <div class="observation-dialog__lead">
+              <p class="eyebrow">器谱 · OBJECT ARCHIVE</p>
+              <p>
+                循时代横向观器。中央为当前文物，左右可继续查看相邻条目。
+              </p>
+            </div>
+            <p class="observation-dialog__hint">
+              滚轮 / ← → 循环换器<br>
+              拖动 / 滑动也可换一件
+            </p>
+            <div
+              class="observation-dialog__rail"
+              data-observation-rail
+              role="group"
+              aria-label="相邻器物"
+            ></div>
+            <div class="observation-dialog__image-frame">
+              <img data-observation-art alt="" draggable="false">
+              <canvas
+                class="observation-dialog__model-snapshot"
+                data-observation-model-snapshot
+                aria-hidden="true"
+                hidden
+              ></canvas>
+              <div class="observation-dialog__model" data-observation-model hidden>
+                <canvas
+                  data-observation-model-canvas
+                  role="img"
+                  aria-label="器物三维模型"
+                ></canvas>
+                <p class="observation-dialog__model-badge">3D OBJECT · 器物</p>
+                <p class="observation-dialog__model-status" data-observation-model-status>
+                  正在载入三维器物…
+                </p>
+              </div>
+              <button
+                class="observation-dialog__study-entry"
+                type="button"
+                data-observation-study-open
+                aria-label="进入当前器物的细读页面"
+              >
+                <span>点击器物 · 细读特征</span>
+              </button>
+            </div>
+            <figcaption>
+              <span data-observation-index>01</span>
+              <span data-observation-english>OBSERVATION</span>
+            </figcaption>
+          </figure>
+
+          <article class="observation-dialog__copy">
+            <div class="observation-dialog__identity" aria-live="polite" aria-atomic="true">
+              <p class="eyebrow observation-dialog__copy-kicker">器物观察</p>
+              <p class="observation-dialog__caption" data-observation-caption></p>
+              <h2 id="observation-title">
+                <span data-observation-title></span>
+                <small data-observation-title-en></small>
+              </h2>
+            </div>
+
+            <dl class="observation-dialog__meta">
+              <div>
+                <dt>时间</dt>
+                <dd data-observation-meta></dd>
+              </div>
+              <div>
+                <dt>时代侧重</dt>
+                <dd data-observation-meta></dd>
+              </div>
+              <div>
+                <dt>代表器物</dt>
+                <dd data-observation-meta></dd>
+              </div>
+              <div>
+                <dt>时代气质</dt>
+                <dd data-observation-meta></dd>
+              </div>
+            </dl>
+
+            <section class="observation-dialog__note" aria-labelledby="observation-note-title">
+              <div class="observation-dialog__note-head">
+                <h3 id="observation-note-title">观器札记</h3>
+                <span>形 · 色 · 纹</span>
+              </div>
+              <p data-observation-note></p>
+            </section>
+
+            <footer class="observation-dialog__footer">
+              <button type="button" data-observation-prev aria-label="观察上一件器物">
+                <span aria-hidden="true">←</span>
+                上一器
+              </button>
+              <span data-observation-progress></span>
+              <button type="button" data-observation-next aria-label="观察下一件器物">
+                下一器
+                <span aria-hidden="true">→</span>
+              </button>
+            </footer>
+          </article>
+        </div>
+
+        <section
+          class="observation-study"
+          data-observation-study
+          aria-label="器物细读"
+          aria-hidden="true"
+          inert
+        >
+          <div class="observation-study__copy" aria-live="polite" aria-atomic="true">
+            <header class="observation-study__heading">
+              <p class="observation-study__kicker">
+                <span data-observation-study-kicker>器形</span>
+                <span aria-hidden="true"> · </span>
+                <span data-observation-study-english>PROFILE</span>
+              </p>
+              <p class="observation-study__count" data-observation-study-count>
+                01 / 04
+              </p>
+            </header>
+            <p class="observation-study__object" data-observation-study-object></p>
+            <h2 data-observation-study-title></h2>
+            <p class="observation-study__description" data-observation-study-description></p>
+
+            <div class="observation-study__artifact-record">
+              <p
+                class="observation-study__artifact-name"
+                data-observation-study-artifact-name
+                hidden
+              ></p>
+              <section class="observation-study__archive" aria-labelledby="observation-study-archive-title">
+                <div class="observation-study__archive-head">
+                  <h3 id="observation-study-archive-title">馆藏记录 · ARCHIVE</h3>
+                  <span data-observation-study-year></span>
+                </div>
+                <dl data-observation-study-meta></dl>
+              </section>
+            </div>
+
+            <footer class="observation-study__actions">
+              <button type="button" data-observation-study-back>
+                <span aria-hidden="true">←</span>
+                返回器物
+              </button>
+              <button type="button" data-observation-study-prev>
+                <span aria-hidden="true">←</span>
+                上一器
+              </button>
+              <button type="button" data-observation-study-next>
+                下一器
+                <span aria-hidden="true">→</span>
+              </button>
+            </footer>
+          </div>
+
+          <nav class="observation-study__features" aria-label="器物特征">
+            <p class="observation-study__features-label">特征 · DETAIL</p>
+            <ol data-observation-study-features></ol>
+          </nav>
+
+          <p class="observation-study__wheel-hint">
+            滚轮查看特征 · 拖动 360° 查看器物
+            <span>SCROLL FEATURES · DRAG 360° TO ORBIT</span>
+          </p>
+        </section>
+      </div>
+    </dialog>
+
+    <aside id="index-panel" class="index-panel" aria-hidden="true">
+      <div class="index-panel__header">
+        <p class="eyebrow" data-index-context>陶成 / COLLECTION</p>
+        <button class="index-panel__close" type="button" data-index-close aria-label="关闭索引">
+          关闭
+        </button>
+      </div>
+      <ol class="index-list" data-index-list></ol>
+    </aside>
+
+    <dialog class="detail-dialog" data-detail-dialog aria-labelledby="detail-viewer-title">
+      <div class="detail-dialog__stage">
+        <div class="detail-dialog__scroller" data-detail-scroller>
+          <div class="detail-dialog__pages">
+            <div class="detail-dialog__panel" data-detail-panel aria-label="主画面版块">
+              <article
+                class="detail-dialog__sheet detail-dialog__page"
+                data-detail-viewer
+                tabindex="0"
+                aria-label="作品档案。左右拖拽或使用方向键切换作品。"
+              >
+                <div
+                  class="detail-dialog__page-art-layer"
+                  data-detail-page-art-layer
+                  hidden
+                ></div>
+                <header class="detail-dialog__sheet-head">
+                  <p class="detail-dialog__count" data-detail-count>01 / 08</p>
+                </header>
+
+                <h2 id="detail-viewer-title" class="detail-dialog__title" data-detail-title></h2>
+
+                <dl class="detail-dialog__credits">
+                  <div>
+                    <dt data-detail-credit-label>时间</dt>
+                    <dd data-detail-credit-value></dd>
+                  </div>
+                  <div>
+                    <dt data-detail-credit-label>代表瓷类</dt>
+                    <dd data-detail-credit-value></dd>
+                  </div>
+                  <div>
+                    <dt data-detail-credit-label>时代气质</dt>
+                    <dd data-detail-credit-value></dd>
+                  </div>
+                  <div>
+                    <dt data-detail-credit-label>时代气质</dt>
+                    <dd data-detail-credit-value></dd>
+                  </div>
+                </dl>
+
+                <section
+                  class="detail-dialog__quotes"
+                  data-detail-reviews
+                  aria-label="工艺与审美评价"
+                ></section>
+                <p class="detail-dialog__caption" data-detail-caption hidden></p>
+
+                <footer class="detail-dialog__sheet-footer">
+                  <p class="detail-dialog__note">按 ← / → 切换作品</p>
+                  <div class="detail-dialog__controls">
+                    <button type="button" data-detail-prev aria-label="上一部作品">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+                    </button>
+                    <div class="detail-dialog__counter" aria-live="polite">
+                      <span data-detail-index>01</span>
+                      <span class="detail-dialog__counter-line" aria-hidden="true"></span>
+                      <span data-detail-total>08</span>
+                    </div>
+                    <button type="button" data-detail-next aria-label="下一部作品">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+                    </button>
+                  </div>
+                </footer>
+              </article>
+            </div>
+
+            <div class="detail-dialog__panel" data-detail-panel aria-label="空白画面版块，第二屏">
+              <article
+                class="detail-dialog__sheet detail-dialog__page detail-dialog__page--blank"
+                data-detail-secondary-panel
+              >
+                <div
+                  class="detail-dialog__page-art-layer"
+                  data-detail-secondary-art-layer
+                  hidden
+                ></div>
+              </article>
+            </div>
+
+            <div class="detail-dialog__panel" data-detail-panel aria-label="空白画面版块，第三屏">
+              <article
+                class="detail-dialog__sheet detail-dialog__page detail-dialog__page--blank"
+                data-detail-tertiary-panel
+                data-blank-panel
+                aria-label="空白 16:9 画面版块，第三屏"
+              >
+                <div
+                  class="detail-dialog__page-art-layer"
+                  data-detail-tertiary-art-layer
+                  hidden
+                ></div>
+              </article>
+            </div>
+
+            <div class="detail-dialog__panel" data-detail-panel aria-label="空白画面版块，第四屏">
+              <article
+                class="detail-dialog__sheet detail-dialog__page detail-dialog__page--blank"
+                data-detail-fourth-panel
+                data-blank-panel
+                aria-label="空白 16:9 画面版块，第四屏"
+              >
+                <div
+                  class="detail-dialog__page-art-layer"
+                  data-detail-fourth-art-layer
+                  hidden
+                ></div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+        <section class="detail-dialog__immersive" aria-label="琢土单页预览">
+          <header class="detail-dialog__immersive-head">
+            <p>琢土 · CARVED EARTH</p>
+            <span data-detail-immersive-status>已收录</span>
+          </header>
+          <div class="detail-dialog__immersive-stage">
+            <div
+              class="detail-dialog__immersive-copy detail-dialog__immersive-copy--title"
+              data-detail-immersive-copy-title
+            >
+              <h2 data-detail-immersive-title></h2>
+            </div>
+            <div class="detail-dialog__immersive-page" data-detail-immersive-page>
+              <video
+                class="detail-dialog__immersive-video"
+                data-detail-immersive-video
+                poster="./assets/taoyetu-scroll-01.jpg"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                tabindex="0"
+                aria-label="陶冶图卷动态画面，按回车或空格暂停或播放"
+                hidden
+              ></video>
+              <img
+                class="detail-dialog__immersive-art"
+                data-detail-immersive-art
+                alt=""
+                draggable="false"
+              >
+            </div>
+            <div
+              class="detail-dialog__immersive-copy detail-dialog__immersive-copy--description"
+              data-detail-immersive-copy-description
+            >
+              <p data-detail-immersive-description></p>
+            </div>
+          </div>
+          <footer class="detail-dialog__immersive-foot">
+            <p>点击画面暂停 · 握拳返回</p>
+            <div class="detail-dialog__immersive-counter" aria-label="第 1 页，共 1 页">
+              <span data-detail-immersive-index>01</span>
+              <span aria-hidden="true"></span>
+              <span data-detail-immersive-total>12</span>
+            </div>
+            <p><kbd>Esc</kbd> 返回</p>
+          </footer>
+        </section>
+        <div class="detail-dialog__controls-frame">
+          <button class="detail-dialog__close" type="button" data-detail-close>
+            <span class="detail-dialog__close-icon" aria-hidden="true">‹</span>
+            <span data-detail-close-label>返回</span>
+          </button>
+          <button
+            class="detail-dialog__preview"
+            type="button"
+            data-detail-preview
+            aria-label="下移预览下一版块"
+          >
+            下移预览
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <p class="sr-only" data-instructions>
+      使用鼠标滚轮、触控板、拖拽或左右方向键浏览。按回车打开沉浸式作品浏览，按空格翻面，点击“观器”查看器物观察界面。
+    </p>
+  </body>
+</html>

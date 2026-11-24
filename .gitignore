@@ -1,0 +1,25 @@
+.tmp-font/
+qa/
+scripts/
+preview.png
+Thumbs.db
+.DS_Store
+
+# Legacy reference imagery and unused model drafts
+assets/beef.webp
+assets/dreaming-whilst-black.webp
+assets/euphoria.webp
+assets/han-jin-primitive-greenware-zeng.glb
+assets/han-jin-qingyou-shuangxi-zeng-web.glb
+assets/han-jin-qingyou-shuangxi-zeng.glb
+assets/hazbin-hotel-poster.webp
+assets/hazbin-hotel.webp
+assets/irma-vep.webp
+assets/ming-qinghua-dish.glb
+assets/mo.webp
+assets/ramy.webp
+assets/random-acts-of-flyness.webp
+assets/such-brave-girls.webp
+assets/sunny.webp
+assets/the-curse.webp
+assets/the-sympathizer.webp
